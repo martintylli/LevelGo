@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>LevelGo – Perfekt våg. Inga gräl. | Tyllcamp</title>
+  <meta name="description" content="LevelGo gör det enkelt att få husvagn/husbil i våg. Se lutning direkt i mobilen via Bluetooth. Perfekt våg. Inga gräl." />
+
+  <!-- Open Graph (delning på sociala medier) -->
+  <meta property="og:title" content="LevelGo – Perfekt våg. Inga gräl." />
+  <meta property="og:description" content="Se lutning direkt i mobilen. Parkera. Kolla appen. Justera – klart." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og-levelgo.jpg" /> <!-- Lägg en 1200x630 här -->
+  <meta property="og:locale" content="sv_SE" />
+
+  <style>
+    :root{
+      --bg:#0b0f0e;
+      --card:#121917;
+      --muted:#9fb1aa;
+      --text:#eaf2ef;
+      --brand:#7af0c3;  /* neongrön-ish men sober */
+      --line:rgba(255,255,255,.08);
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(900px 600px at 20% 0%, rgba(122,240,195,.12), transparent 60%),
+        radial-gradient(900px 600px at 80% 10%, rgba(122,240,195,.08), transparent 60%),
+        var(--bg);
+      line-height:1.45;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding: 20px;}
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background: rgba(11,15,14,.65);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      text-decoration:none;
+      padding:12px 0;
+    }
+    .brand img{height:34px; width:auto; display:block}
+    .navlinks{display:flex; gap:14px; flex-wrap:wrap}
+    .navlinks a{
+      text-decoration:none;
+      color:var(--muted);
+      font-size:14px;
+      padding:8px 10px;
+      border-radius:999px;
+    }
+    .navlinks a:hover{background:rgba(255,255,255,.06); color:var(--text)}
+    .cta{
+      display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+      transition: transform .08s ease, background .2s ease;
+      white-space:nowrap;
+    }
+    .btn:hover{background: rgba(255,255,255,.10)}
+    .btn:active{transform: translateY(1px)}
+    .btn.primary{
+      background: linear-gradient(180deg, rgba(122,240,195,.22), rgba(122,240,195,.10));
+      border-color: rgba(122,240,195,.30);
+    }
+
+    .hero{
+      padding: 44px 0 28px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr; }
+    }
+    .card{
+      background: rgba(18,25,23,.75);
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+    .tagline{
+      font-size: clamp(16px, 1.7vw, 18px);
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+    .slogan{
+      display:inline-flex;
+      gap:10px; align-items:center;
+      padding:10px 14px;
+      border-radius: 999px;
+      background: rgba(122,240,195,.12);
+      border: 1px solid rgba(122,240,195,.25);
+      font-weight:700;
+      margin: 6px 0 18px;
+    }
+    .mini{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    @media (max-width: 520px){
+      .mini{grid-template-columns:1fr;}
+    }
+    .mini .chip{
+      border:1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 12px;
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .mini .chip b{color:var(--text)}
+    .quote{
+      margin-top: 14px;
+      padding: 14px;
+      border-left: 3px solid rgba(122,240,195,.55);
+      background: rgba(255,255,255,.04);
+      border-radius: 12px;
+      color: var(--text);
+    }
+    .quote .small{color:var(--muted); font-size: 13px; margin-top: 6px}
+    .imgbox{
+      border-radius: var(--radius);
+      overflow:hidden;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      height:100%;
+      min-height: 320px;
+      display:flex; align-items:center; justify-content:center;
+      position:relative;
+    }
+    .imgbox img{width:100%; height:100%; object-fit:cover; display:block}
+    .imgnote{
+      position:absolute; left:12px; bottom:12px;
+      background: rgba(0,0,0,.45);
+      border:1px solid var(--line);
+      padding: 8px 10px;
+      border-radius: 12px;
+      color: var(--text);
+      font-size: 13px;
+    }
+
+    section{padding: 26px 0;}
+    .section-title{
+      font-size: 18px;
+      letter-spacing:.02em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+    .features{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 900px){ .features{grid-template-columns:1fr} }
+    .feature{
+      border:1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      background: rgba(255,255,255,.04);
+    }
+    .feature h3{margin:0 0 6px; font-size:16px}
+    .feature p{margin:0; color:var(--muted); font-size:14px}
+
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 900px){ .gallery{grid-template-columns:1fr} }
+    .ph{
+      border-radius: 16px;
+      overflow:hidden;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      aspect-ratio: 4 / 3;
+    }
+    .ph img{width:100%; height:100%; object-fit:cover; display:block}
+
+    footer{
+      border-top: 1px solid var(--line);
+      padding: 22px 0 30px;
+      color: var(--muted);
+    }
+    .contact{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 12px;
+      align-items:start;
+    }
+    @media (max-width: 900px){ .contact{grid-template-columns:1fr} }
+    .contact .row{display:flex; gap:10px; flex-wrap:wrap}
+    .small{font-size:13px; color: var(--muted)}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+    .divider{height:1px; background: var(--line); margin: 16px 0;}
+  </style>
+</head>
+
+<body>
+  <!-- ÄNDRA DESSA -->
+  <script>
+    const APP_URL = "https://DIN-LOVABLE-LANK-HAR";  // <-- byt till din app-länk
+  </script>
+
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Tyllcamp">
+        <!-- Byt till din logga -->
+        <img src="assets/tyllcamp-logo.png" alt="Tyllcamp" />
+      </a>
+
+      <nav class="navlinks">
+        <a href="#levelgo">LevelGo</a>
+        <a href="#sa-funkar-det">Så funkar det</a>
+        <a href="#bilder">Bilder</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn primary" href="#kontakt">Kontakta oss</a>
+        <a class="btn" href="#" onclick="window.location.href=APP_URL; return false;">Ladda ner appen</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="wrap">
+    <section class="hero" id="levelgo">
+      <div class="grid">
+        <div class="card">
+          <h1>LevelGo</h1>
+          <p class="tagline">
+            Ett smart verktyg som gör det enkelt att få din husvagn eller husbil i våg – utan gissningar, utan drama.
+          </p>
+
+          <div class="slogan">Perfekt våg. Inga gräl.</div>
+
+          <div class="row" style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn primary" href="#" onclick="window.location.href=APP_URL; return false;">Ladda ner appen</a>
+            <a class="btn" href="#sa-funkar-det">Se hur det funkar</a>
+          </div>
+
+          <div class="quote">
+            “Lite mer upp!” – “Nej, ner där bak!” – “Nu blev det värre!”
+            <div class="small">Klassikern på campingen… tills du har LevelGo.</div>
+          </div>
+
+          <div class="mini">
+            <div class="chip"><b>Bluetooth till mobilen</b><br/>Se lutning direkt i appen.</div>
+            <div class="chip"><b>X- och Y-led</b><br/>Du vet exakt hur du ska justera.</div>
+          </div>
+        </div>
+
+        <div class="imgbox card" style="padding:0;">
+          <!-- Lägg en snygg hero-bild här -->
+          <img src="assets/hero-levelgo.jpg" alt="LevelGo i användning" />
+          <div class="imgnote">Parkera. Kolla appen. Justera – klart.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sa-funkar-det">
+      <p class="section-title">Så funkar det</p>
+      <div class="features">
+        <div class="feature">
+          <h3>1) Parkera</h3>
+          <p>Stanna där du vill stå – LevelGo ger dig koll direkt.</p>
+        </div>
+        <div class="feature">
+          <h3>2) Kolla appen</h3>
+          <p>Se lutningen i X- och Y-led i mobilen via Bluetooth.</p>
+        </div>
+        <div class="feature">
+          <h3>3) Justera</h3>
+          <p>Höj/sänk tills du är i våg. Klart på några sekunder.</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="features">
+        <div class="feature">
+          <h3>Snabb info</h3>
+          <p>Se det du behöver – utan krångel. Byggt för campinglivet.</p>
+        </div>
+        <div class="feature">
+          <h3>Smart integration (valfritt)</h3>
+          <p>Stöd för MQTT och Home Assistant för dig som vill koppla in i ditt smarta system.</p>
+        </div>
+        <div class="feature">
+          <h3>Utvecklad i Finland</h3>
+          <p>Från familjeföretaget Tyllcamp – innovation, enkelhet, kvalitet och pålitlighet.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="bilder">
+      <p class="section-title">Bilder på produkten</p>
+      <div class="gallery">
+        <div class="ph"><img src="assets/levelgo-1.jpg" alt="LevelGo – produktbild 1"></div>
+        <div class="ph"><img src="assets/levelgo-2.jpg" alt="LevelGo – produktbild 2"></div>
+        <div class="ph"><img src="assets/levelgo-3.jpg" alt="LevelGo – produktbild 3"></div>
+      </div>
+      <p class="small" style="margin-top:10px;">
+        Tips: använd ljusa, enkla produktbilder + en bild där mobilen visar appen.
+      </p>
+    </section>
+
+    <section id="kontakt">
+      <p class="section-title">Kontakt</p>
+      <div class="contact">
+        <div class="card">
+          <h2 style="margin:0 0 8px;">Hör av dig</h2>
+          <p style="margin:0 0 14px; color:var(--muted);">
+            Vill du bli återförsäljare, testa LevelGo eller få mer info? Skicka ett meddelande så svarar vi snabbt.
+          </p>
+
+          <!-- ÄNDRA KONTAKTUPPGIFTER -->
+          <div class="small">
+            <div><b>Tyllcamp</b></div>
+            <div>E-post: <a href="mailto:info@tyllcamp.fi">info@tyllcamp.fi</a></div>
+            <div>Telefon: <a href="tel:+358000000000">+358 00 000 0000</a></div>
+            <div class="mono">Finland</div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="row">
+            <a class="btn primary" href="mailto:info@tyllcamp.fi?subject=Intresse%20för%20LevelGo">Maila oss</a>
+            <a class="btn" href="#" onclick="window.location.href=APP_URL; return false;">Ladda ner appen</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 style="margin:0 0 8px;">Snabbinfo</h2>
+          <p class="small" style="margin-top:0;">
+            LevelGo är byggd för att vara enkel att använda och snabb att förstå.
+          </p>
+          <div class="divider"></div>
+
+          <div class="small">
+            <b>Våra värderingar</b><br/>
+            • Innovation<br/>
+            • Enkelhet<br/>
+            • Kvalitet<br/>
+            • Pålitlighet
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="small">
+            <b>Slogan</b><br/>
+            Perfekt våg. Inga gräl.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap" style="padding:0;">
+        <div class="small">
+          © <span id="y"></span> Tyllcamp. Alla rättigheter förbehållna.
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
