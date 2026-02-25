@@ -1,258 +1,199 @@
 <!doctype html>
 <html lang="sv">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <!-- Primary SEO -->
-  <title>LevelGo – Perfekt i våg. Inga gräl. | Tyllcamp</title>
-  <meta name="description" content="LevelGo från Tyllcamp är ett smart digitalt vattenpass för husbil och husvagn. Se lutning och få exakt cm-instruktion direkt i mobilen via Bluetooth.">
-  <meta name="robots" content="index,follow">
-  <meta name="author" content="Tyllcamp">
-  <link rel="canonical" href="https://tyllcamp.com/">
+<!-- SEO -->
+<title>LevelGo – Perfekt i våg. Inga gräl. | Tyllcamp</title>
+<meta name="description" content="LevelGo från Tyllcamp är ett smart digitalt vattenpass för husbil och husvagn. Du ser direkt hur mycket och var du ska höja – exakt i centimeter via mobilen.">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Tyllcamp">
+<link rel="canonical" href="https://tyllcamp.com/">
 
-  <!-- Favicons -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<!-- Open Graph -->
+<meta property="og:site_name" content="Tyllcamp">
+<meta property="og:title" content="LevelGo – Perfekt i våg. Inga gräl.">
+<meta property="og:description" content="Du ser direkt hur mycket och var du ska höja. LevelGo räknar ut exakt hur många centimeter som behövs.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tyllcamp.com/">
+<meta property="og:image" content="https://tyllcamp.com/og-levelgo.jpg">
+<meta property="og:locale" content="sv_SE">
 
-  <!-- Open Graph / Facebook / WhatsApp -->
-  <meta property="og:site_name" content="Tyllcamp">
-  <meta property="og:title" content="LevelGo – Perfekt våg. Inga gräl.">
-  <meta property="og:description" content="LevelGo räknar ut exakt hur mycket du ska höja (i cm) – direkt i mobilen.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tyllcamp.com/">
-  <meta property="og:image" content="https://tyllcamp.com/og-levelgo.jpg">
-  <meta property="og:locale" content="sv_SE">
+<meta name="theme-color" content="#0b0f0e">
 
-  <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="LevelGo – Perfekt våg. Inga gräl.">
-  <meta name="twitter:description" content="Se lutning och få exakt cm-instruktion direkt i mobilen via Bluetooth.">
-  <meta name="twitter:image" content="https://tyllcamp.com/og-levelgo.jpg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-  <!-- Theme color -->
-  <meta name="theme-color" content="#0b0f0e">
+<style>
+:root{
+  --bg:#0b0f0e;
+  --card:#121917;
+  --muted:#9fb1aa;
+  --text:#eaf2ef;
+  --brand:#7af0c3;
+  --line:rgba(255,255,255,.08);
+  --radius:18px;
+  --max:1100px;
+}
 
-  <style>
-    :root{
-      --bg:#0b0f0e;
-      --card:#121917;
-      --muted:#9fb1aa;
-      --text:#eaf2ef;
-      --brand:#7af0c3;
-      --line:rgba(255,255,255,.08);
-      --radius:18px;
-      --max:1100px;
-    }
+*{box-sizing:border-box}
 
-    *{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.5;
+}
 
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.45;
-    }
+.wrap{max-width:var(--max); margin:auto; padding:20px;}
 
-    a{color:inherit}
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:40px;
+  gap:16px;
+  flex-wrap:wrap;
+}
 
-    .wrap{max-width:var(--max); margin:auto; padding:20px;}
+header img{height:34px;}
 
-    header{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:40px;
-      gap:16px;
-      flex-wrap:wrap;
-    }
+.lang{display:flex; gap:6px;}
 
-    header img{height:34px;}
+.lang button{
+  border:1px solid var(--line);
+  background:transparent;
+  color:var(--muted);
+  padding:6px 10px;
+  border-radius:999px;
+  cursor:pointer;
+  font-weight:700;
+  font-size:12px;
+}
 
-    .lang{
-      display:flex;
-      gap:6px;
-    }
+.lang button.active{
+  background:var(--brand);
+  color:#000;
+  border-color:transparent;
+}
 
-    .lang button{
-      border:1px solid var(--line);
-      background:transparent;
-      color:var(--muted);
-      padding:6px 10px;
-      border-radius:999px;
-      cursor:pointer;
-      font-weight:700;
-      font-size:12px;
-    }
+.hero{
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:30px;
+  align-items:center;
+  margin-bottom:60px;
+}
 
-    .lang button.active{
-      background:var(--brand);
-      color:#000;
-      border-color:transparent;
-    }
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;}
+}
 
-    .hero{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:30px;
-      align-items:center;
-      margin-bottom:60px;
-    }
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:28px;
+  border:1px solid var(--line);
+}
 
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr;}
-    }
+h1{
+  font-size:clamp(30px,4vw,44px);
+  margin:0 0 16px;
+  letter-spacing:-0.02em;
+  line-height:1.1;
+}
 
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:24px;
-      border:1px solid var(--line);
-    }
+.tagline{
+  color:var(--muted);
+  margin:0 0 20px;
+  font-size:17px;
+}
 
-    h1{
-      font-size:clamp(28px,4vw,44px);
-      margin:0 0 12px;
-      letter-spacing:-0.02em;
-      line-height:1.05;
-    }
+.button{
+  display:inline-block;
+  padding:14px 24px;
+  border-radius:999px;
+  background:var(--brand);
+  color:#000;
+  font-weight:800;
+  text-decoration:none;
+}
 
-    .tagline{
-      color:var(--muted);
-      margin:0 0 18px;
-      font-size:16px;
-    }
+.imgbox img{
+  width:100%;
+  border-radius:var(--radius);
+  border:1px solid var(--line);
+  display:block;
+}
 
-    .buttonRow{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
+.section{
+  margin-top:70px;
+}
 
-    .button{
-      display:inline-block;
-      padding:12px 22px;
-      border-radius:999px;
-      background:var(--brand);
-      color:#000;
-      font-weight:800;
-      text-decoration:none;
-      margin-top:10px;
-    }
-    .button.secondary{
-      background:transparent;
-      color:var(--text);
-      border:1px solid var(--line);
-      font-weight:700;
-    }
+h2{margin:0 0 14px;}
 
-    .imgbox img{
-      width:100%;
-      border-radius:var(--radius);
-      border:1px solid var(--line);
-      display:block;
-    }
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
 
-    .section{
-      margin-top:60px;
-    }
+@media(max-width:900px){
+  .gallery{grid-template-columns:1fr;}
+}
 
-    h2{margin:0 0 12px;}
-    p{margin:0 0 10px;}
+.gallery img{
+  width:100%;
+  border-radius:var(--radius);
+  border:1px solid var(--line);
+  display:block;
+}
 
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:16px;
-    }
+footer{
+  margin-top:80px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:14px;
+}
+</style>
+</head>
 
-    @media(max-width:900px){
-      .gallery{grid-template-columns:1fr;}
-    }
-
-    .gallery img{
-      width:100%;
-      border-radius:var(--radius);
-      border:1px solid var(--line);
-      display:block;
-    }
-
-    .small{color:var(--muted); font-size:14px}
-
-    footer{
-      margin-top:80px;
-      padding-top:20px;
-      border-top:1px solid var(--line);
-      color:var(--muted);
-      font-size:14px;
-    }
-  </style>
-
-  <!-- Structured data (Google) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Tyllcamp",
-    "url": "https://tyllcamp.com/",
-    "logo": "https://tyllcamp.com/tyllcamp-logo.png",
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "contactType": "customer support",
-      "email": "info@tyllcamp.fi",
-      "telephone": "+358000000000",
-      "availableLanguage": ["sv", "fi", "en"]
-    }]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "LevelGo",
-    "brand": { "@type": "Brand", "name": "Tyllcamp" },
-    "description": "Smart digitalt vattenpass för husbil och husvagn. Visar lutning och räknar ut exakt hur många centimeter du ska höja – direkt i mobilen via Bluetooth.",
-    "image": [
-      "https://tyllcamp.com/hero-levelgo.jpg",
-      "https://tyllcamp.com/levelgo-1.jpg",
-      "https://tyllcamp.com/levelgo-2.jpg",
-      "https://tyllcamp.com/levelgo-3.jpg"
-    ],
-    "url": "https://tyllcamp.com/",
-    "category": "Camping equipment"
-  }
-  </script>
-  <body>
+<body>
 
 <script>
 const APP_URL="https://app.tyllcamp.com/";
 
 const dict={
 sv:{
-title:"Perfekt våg.<br>Inga gräl.",
-tagline:"LevelGo visar lutningen och <b>räknar ut exakt hur många centimeter</b> du ska höja.",
+title:"Perfekt i våg.<br>Inga gräl.",
+tagline:"Du ser direkt hur mycket och var du ska höja. LevelGo räknar ut exakt hur många centimeter som behövs.",
 download:"Ladda ner appen",
 howTitle:"Så funkar det",
 how1:"1. Parkera",
-how2:"2. Kolla appen",
+how2:"2. Öppna appen",
 how3:"3. Justera tills du är i våg",
 rights:"Alla rättigheter förbehållna."
 },
 fi:{
-title:"Täydellinen tasapaino.<br>Ei enää riitoja.",
-tagline:"LevelGo näyttää kallistuksen ja <b>laskee tarkasti senttimetreinä</b> kuinka paljon sinun pitää nostaa.",
+title:"Täydellisesti suorassa.<br>Ilman riitoja.",
+tagline:"Näet heti kuinka paljon ja mistä kohtaa pitää nostaa. LevelGo laskee tarkasti senttimetrit puolestasi.",
 download:"Lataa sovellus",
 howTitle:"Näin se toimii",
 how1:"1. Pysäköi",
-how2:"2. Katso sovellusta",
+how2:"2. Avaa sovellus",
 how3:"3. Säädä kunnes olet suorassa",
 rights:"Kaikki oikeudet pidätetään."
 },
 en:{
-title:"Perfect level.<br>No more fights.",
-tagline:"LevelGo shows the tilt and <b>calculates the exact centimeters</b> you need to raise.",
+title:"Perfectly level.<br>No arguments.",
+tagline:"See instantly how much and where to adjust. LevelGo calculates the exact centimeters for you.",
 download:"Get the app",
 howTitle:"How it works",
 how1:"1. Park",
-how2:"2. Check the app",
+how2:"2. Open the app",
 how3:"3. Adjust until level",
 rights:"All rights reserved."
 }
@@ -315,9 +256,9 @@ setLang(saved);
 <section class="section">
 <h2>Bilder</h2>
 <div class="gallery">
-<img src="levelgo-1.jpg">
-<img src="levelgo-2.jpg">
-<img src="levelgo-3.jpg">
+<img src="levelgo-1.jpg" alt="Campingbild 1">
+<img src="levelgo-2.jpg" alt="Campingbild 2">
+<img src="levelgo-3.jpg" alt="Campingbild 3">
 </div>
 </section>
 
@@ -331,5 +272,5 @@ setLang(saved);
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-  </body>
+</body>
 </html>
