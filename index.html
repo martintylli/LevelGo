@@ -1,262 +1,443 @@
 <!doctype html>
 <html lang="sv">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>LevelGo – Perfekt våg. Inga gräl. | Tyllcamp</title>
-<meta name="description" content="LevelGo visar lutning och räknar ut exakt hur många centimeter du ska höja.">
+  <!-- Primary SEO -->
+  <title>LevelGo – Perfekt våg. Inga gräl. | Tyllcamp</title>
+  <meta name="description" content="LevelGo från Tyllcamp är ett smart digitalt vattenpass för husbil och husvagn. Se lutning och få exakt cm-instruktion direkt i mobilen via Bluetooth.">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Tyllcamp">
+  <link rel="canonical" href="https://tyllcamp.com/">
 
-<meta property="og:title" content="LevelGo – Perfekt våg. Inga gräl.">
-<meta property="og:description" content="LevelGo räknar ut exakt hur mycket du ska höja (i cm) – direkt i mobilen.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="og-levelgo.jpg">
-<meta property="og:locale" content="sv_SE">
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<style>
-:root{
---bg:#0b0f0e;
---card:#121917;
---muted:#9fb1aa;
---text:#eaf2ef;
---brand:#7af0c3;
---line:rgba(255,255,255,.08);
---radius:18px;
---max:1100px;
-}
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:site_name" content="Tyllcamp">
+  <meta property="og:title" content="LevelGo – Perfekt våg. Inga gräl.">
+  <meta property="og:description" content="LevelGo räknar ut exakt hur mycket du ska höja (i cm) – direkt i mobilen.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tyllcamp.com/">
+  <meta property="og:image" content="https://tyllcamp.com/og-levelgo.jpg">
+  <meta property="og:locale" content="sv_SE">
 
-*{box-sizing:border-box}
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LevelGo – Perfekt våg. Inga gräl.">
+  <meta name="twitter:description" content="Se lutning och få exakt cm-instruktion direkt i mobilen via Bluetooth.">
+  <meta name="twitter:image" content="https://tyllcamp.com/og-levelgo.jpg">
 
-body{
-margin:0;
-font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-color:var(--text);
-background:var(--bg);
-}
+  <!-- Theme color -->
+  <meta name="theme-color" content="#0b0f0e">
 
-.wrap{max-width:var(--max); margin:auto; padding:20px;}
+  <style>
+    :root{
+      --bg:#0b0f0e;
+      --card:#121917;
+      --muted:#9fb1aa;
+      --text:#eaf2ef;
+      --brand:#7af0c3;
+      --line:rgba(255,255,255,.08);
+      --radius:18px;
+      --max:1100px;
+    }
 
-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:40px;
-}
+    *{box-sizing:border-box}
 
-header img{height:34px;}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.45;
+    }
 
-.lang{
-display:flex;
-gap:6px;
-}
+    a{color:inherit}
 
-.lang button{
-border:1px solid var(--line);
-background:transparent;
-color:var(--muted);
-padding:6px 10px;
-border-radius:999px;
-cursor:pointer;
-font-weight:600;
-}
+    .wrap{max-width:var(--max); margin:auto; padding:20px;}
 
-.lang button.active{
-background:var(--brand);
-color:#000;
-}
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:40px;
+      gap:16px;
+      flex-wrap:wrap;
+    }
 
-.hero{
-display:grid;
-grid-template-columns:1.1fr .9fr;
-gap:30px;
-align-items:center;
-margin-bottom:60px;
-}
+    header img{height:34px;}
 
-@media(max-width:900px){
-.hero{grid-template-columns:1fr;}
-}
+    .lang{
+      display:flex;
+      gap:6px;
+    }
 
-.card{
-background:var(--card);
-border-radius:var(--radius);
-padding:24px;
-}
+    .lang button{
+      border:1px solid var(--line);
+      background:transparent;
+      color:var(--muted);
+      padding:6px 10px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:700;
+      font-size:12px;
+    }
 
-h1{
-font-size:clamp(28px,4vw,44px);
-margin:0 0 12px;
-}
+    .lang button.active{
+      background:var(--brand);
+      color:#000;
+      border-color:transparent;
+    }
 
-.tagline{
-color:var(--muted);
-margin-bottom:20px;
-}
+    .hero{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:30px;
+      align-items:center;
+      margin-bottom:60px;
+    }
 
-.button{
-display:inline-block;
-padding:12px 22px;
-border-radius:999px;
-background:var(--brand);
-color:#000;
-font-weight:700;
-text-decoration:none;
-margin-top:10px;
-}
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;}
+    }
 
-.imgbox img{
-width:100%;
-border-radius:var(--radius);
-}
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:24px;
+      border:1px solid var(--line);
+    }
 
-.section{
-margin-top:60px;
-}
+    h1{
+      font-size:clamp(28px,4vw,44px);
+      margin:0 0 12px;
+      letter-spacing:-0.02em;
+      line-height:1.05;
+    }
 
-.gallery{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:16px;
-}
+    .tagline{
+      color:var(--muted);
+      margin:0 0 18px;
+      font-size:16px;
+    }
 
-@media(max-width:900px){
-.gallery{grid-template-columns:1fr;}
-}
+    .buttonRow{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
 
-.gallery img{
-width:100%;
-border-radius:var(--radius);
-}
+    .button{
+      display:inline-block;
+      padding:12px 22px;
+      border-radius:999px;
+      background:var(--brand);
+      color:#000;
+      font-weight:800;
+      text-decoration:none;
+      margin-top:10px;
+    }
+    .button.secondary{
+      background:transparent;
+      color:var(--text);
+      border:1px solid var(--line);
+      font-weight:700;
+    }
 
-footer{
-margin-top:80px;
-padding-top:20px;
-border-top:1px solid var(--line);
-color:var(--muted);
-font-size:14px;
-}
-</style>
+    .imgbox img{
+      width:100%;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      display:block;
+    }
+
+    .section{
+      margin-top:60px;
+    }
+
+    h2{margin:0 0 12px;}
+    p{margin:0 0 10px;}
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+    }
+
+    @media(max-width:900px){
+      .gallery{grid-template-columns:1fr;}
+    }
+
+    .gallery img{
+      width:100%;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      display:block;
+    }
+
+    .small{color:var(--muted); font-size:14px}
+
+    footer{
+      margin-top:80px;
+      padding-top:20px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:14px;
+    }
+  </style>
+
+  <!-- Structured data (Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tyllcamp",
+    "url": "https://tyllcamp.com/",
+    "logo": "https://tyllcamp.com/tyllcamp-logo.png",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "info@tyllcamp.fi",
+      "telephone": "+358000000000",
+      "availableLanguage": ["sv", "fi", "en"]
+    }]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "LevelGo",
+    "brand": { "@type": "Brand", "name": "Tyllcamp" },
+    "description": "Smart digitalt vattenpass för husbil och husvagn. Visar lutning och räknar ut exakt hur många centimeter du ska höja – direkt i mobilen via Bluetooth.",
+    "image": [
+      "https://tyllcamp.com/hero-levelgo.jpg",
+      "https://tyllcamp.com/levelgo-1.jpg",
+      "https://tyllcamp.com/levelgo-2.jpg",
+      "https://tyllcamp.com/levelgo-3.jpg"
+    ],
+    "url": "https://tyllcamp.com/",
+    "category": "Camping equipment"
+  }
+  </script>
 </head>
 
 <body>
-
 <script>
-const APP_URL="https://level-go.lovable.app/";
-const EMAIL="info@tyllcamp.fi";
-const PHONE="+358000000000";
+  const APP_URL="https://level-go.lovable.app/";
+  const EMAIL="info@tyllcamp.fi";
+  const PHONE="+358000000000";
 
-const dict={
-sv:{
-title:"Perfekt våg.<br>Inga gräl.",
-tagline:"LevelGo visar lutningen och <b>räknar ut exakt hur många centimeter</b> du ska höja.",
-download:"Ladda ner appen",
-howTitle:"Så funkar det",
-how1:"1. Parkera",
-how2:"2. Kolla appen",
-how3:"3. Justera tills du är i våg",
-contact:"Kontakt",
-rights:"Alla rättigheter förbehållna."
-},
-fi:{
-title:"Täydellinen tasapaino.<br>Ei enää riitoja.",
-tagline:"LevelGo näyttää kallistuksen ja <b>laskee tarkasti senttimetreinä</b> kuinka paljon sinun pitää nostaa.",
-download:"Lataa sovellus",
-howTitle:"Näin se toimii",
-how1:"1. Pysäköi",
-how2:"2. Katso sovellusta",
-how3:"3. Säädä kunnes olet suorassa",
-contact:"Yhteystiedot",
-rights:"Kaikki oikeudet pidätetään."
-},
-en:{
-title:"Perfect level.<br>No more fights.",
-tagline:"LevelGo shows the tilt and <b>calculates the exact centimeters</b> you need to raise.",
-download:"Get the app",
-howTitle:"How it works",
-how1:"1. Park",
-how2:"2. Check the app",
-how3:"3. Adjust until level",
-contact:"Contact",
-rights:"All rights reserved."
-}
-};
+  const dict={
+    sv:{
+      pageTitle:"LevelGo – Perfekt våg. Inga gräl. | Tyllcamp",
+      pageDesc:"LevelGo från Tyllcamp är ett smart digitalt vattenpass för husbil och husvagn. Se lutning och få exakt cm-instruktion direkt i mobilen via Bluetooth.",
+      ogTitle:"LevelGo – Perfekt våg. Inga gräl.",
+      ogDesc:"LevelGo räknar ut exakt hur mycket du ska höja (i cm) – direkt i mobilen.",
+      title:"Perfekt våg.<br>Inga gräl.",
+      tagline:"LevelGo visar lutningen och <b>räknar ut exakt hur många centimeter</b> du ska höja. Du ser riktning och cm direkt i mobilen.",
+      download:"Ladda ner appen",
+      howBtn:"Se hur det funkar",
+      howTitle:"Så funkar det",
+      how1:"1. Parkera där du vill stå",
+      how2:"2. Kolla appen (lutning + cm)",
+      how3:"3. Justera tills du är i våg",
+      imagesTitle:"Bilder",
+      contact:"Kontakt",
+      contactLead:"Vill du bli återförsäljare, testa LevelGo eller få mer info? Skicka ett mail så svarar vi snabbt.",
+      emailLabel:"E-post",
+      phoneLabel:"Telefon",
+      rights:"Alla rättigheter förbehållna."
+    },
+    fi:{
+      pageTitle:"LevelGo – Täydellinen tasapaino. Ei enää riitoja. | Tyllcamp",
+      pageDesc:"LevelGo on Tyllcampin älykäs digitaalinen vatupassi matkailuautoon ja -vaunuun. Näe kallistus ja saat tarkat cm-ohjeet puhelimeen Bluetoothilla.",
+      ogTitle:"LevelGo – Täydellinen tasapaino. Ei enää riitoja.",
+      ogDesc:"LevelGo laskee tarkasti kuinka paljon sinun pitää nostaa (cm) – suoraan puhelimeen.",
+      title:"Täydellinen tasapaino.<br>Ei enää riitoja.",
+      tagline:"LevelGo näyttää kallistuksen ja <b>laskee tarkasti senttimetreinä</b> kuinka paljon sinun pitää nostaa. Näet suunnan ja cm suoraan puhelimesta.",
+      download:"Lataa sovellus",
+      howBtn:"Katso miten se toimii",
+      howTitle:"Näin se toimii",
+      how1:"1. Pysäköi haluamaasi paikkaan",
+      how2:"2. Katso sovellusta (kallistus + cm)",
+      how3:"3. Säädä kunnes olet suorassa",
+      imagesTitle:"Kuvat",
+      contact:"Yhteystiedot",
+      contactLead:"Haluatko jälleenmyyjäksi, testata LevelGo:ta tai saada lisätietoa? Lähetä sähköposti – vastaamme nopeasti.",
+      emailLabel:"Sähköposti",
+      phoneLabel:"Puhelin",
+      rights:"Kaikki oikeudet pidätetään."
+    },
+    en:{
+      pageTitle:"LevelGo – Perfect level. No more fights. | Tyllcamp",
+      pageDesc:"LevelGo by Tyllcamp is a smart digital level for campers and caravans. See tilt and get exact cm guidance on your phone via Bluetooth.",
+      ogTitle:"LevelGo – Perfect level. No more fights.",
+      ogDesc:"LevelGo calculates exactly how much to raise (in cm) – right on your phone.",
+      title:"Perfect level.<br>No more fights.",
+      tagline:"LevelGo shows the tilt and <b>calculates the exact centimeters</b> you need to raise. Direction and cm right on your phone.",
+      download:"Get the app",
+      howBtn:"See how it works",
+      howTitle:"How it works",
+      how1:"1. Park where you want to stand",
+      how2:"2. Check the app (tilt + cm)",
+      how3:"3. Adjust until level",
+      imagesTitle:"Images",
+      contact:"Contact",
+      contactLead:"Want to resell, test LevelGo, or get more info? Email us and we’ll reply quickly.",
+      emailLabel:"Email",
+      phoneLabel:"Phone",
+      rights:"All rights reserved."
+    }
+  };
 
-function setLang(lang){
-const t=dict[lang];
-document.documentElement.lang=lang;
-document.getElementById("title").innerHTML=t.title;
-document.getElementById("tagline").innerHTML=t.tagline;
-document.getElementById("download").textContent=t.download;
-document.getElementById("howTitle").textContent=t.howTitle;
-document.getElementById("how1").textContent=t.how1;
-document.getElementById("how2").textContent=t.how2;
-document.getElementById("how3").textContent=t.how3;
-document.getElementById("contactTitle").textContent=t.contact;
-document.getElementById("rights").textContent=t.rights;
+  function setMeta(name, content){
+    const el = document.querySelector(`meta[name="${name}"]`);
+    if(el) el.setAttribute("content", content);
+  }
+  function setOG(property, content){
+    const el = document.querySelector(`meta[property="${property}"]`);
+    if(el) el.setAttribute("content", content);
+  }
 
-document.querySelectorAll(".lang button").forEach(b=>{
-b.classList.toggle("active",b.dataset.lang===lang);
-});
+  function setLang(lang){
+    const t=dict[lang] || dict.sv;
 
-localStorage.setItem("lang",lang);
-}
+    document.documentElement.lang=lang;
 
-window.onload=()=>{
-const saved=localStorage.getItem("lang")||"sv";
-setLang(saved);
-};
+    // Page title + description
+    document.title = t.pageTitle;
+    setMeta("description", t.pageDesc);
+
+    // Open Graph / Twitter
+    setOG("og:title", t.ogTitle);
+    setOG("og:description", t.ogDesc);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute("content", t.ogTitle);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute("content", t.pageDesc);
+
+    // Text content
+    document.getElementById("title").innerHTML=t.title;
+    document.getElementById("tagline").innerHTML=t.tagline;
+    document.getElementById("download").textContent=t.download;
+    document.getElementById("howBtn").textContent=t.howBtn;
+
+    document.getElementById("howTitle").textContent=t.howTitle;
+    document.getElementById("how1").textContent=t.how1;
+    document.getElementById("how2").textContent=t.how2;
+    document.getElementById("how3").textContent=t.how3;
+
+    document.getElementById("imagesTitle").textContent=t.imagesTitle;
+
+    document.getElementById("contactTitle").textContent=t.contact;
+    document.getElementById("contactLead").textContent=t.contactLead;
+    document.getElementById("emailLabel").textContent=t.emailLabel;
+    document.getElementById("phoneLabel").textContent=t.phoneLabel;
+
+    document.getElementById("rights").textContent=t.rights;
+
+    document.querySelectorAll(".lang button").forEach(b=>{
+      b.classList.toggle("active",b.dataset.lang===lang);
+    });
+
+    localStorage.setItem("lang",lang);
+  }
+
+  window.onload=()=>{
+    // wire contact
+    const mail = document.getElementById("mail");
+    const tel  = document.getElementById("tel");
+    mail.textContent = EMAIL;
+    mail.href = "mailto:" + EMAIL;
+    tel.textContent = PHONE;
+    tel.href = "tel:" + PHONE.replace(/\s+/g,'');
+
+    // default language
+    const saved=localStorage.getItem("lang");
+    const navLang=(navigator.language||"sv").toLowerCase();
+    const guess = saved || (navLang.startsWith("fi") ? "fi" : (navLang.startsWith("en") ? "en" : "sv"));
+    setLang(guess);
+  };
 </script>
 
 <div class="wrap">
 
-<header>
-<img src="tyllcamp-logo.png" alt="Tyllcamp">
-<div class="lang">
-<button data-lang="sv" onclick="setLang('sv')">SV</button>
-<button data-lang="fi" onclick="setLang('fi')">FI</button>
-<button data-lang="en" onclick="setLang('en')">EN</button>
+  <header>
+    <img src="tyllcamp-logo.png" alt="Tyllcamp">
+    <div class="lang" aria-label="Language">
+      <button data-lang="sv" onclick="setLang('sv')">SV</button>
+      <button data-lang="fi" onclick="setLang('fi')">FI</button>
+      <button data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="card">
+        <h1 id="title"></h1>
+        <p class="tagline" id="tagline"></p>
+
+        <div class="buttonRow">
+          <a id="download" class="button" href="#" onclick="window.location.href=APP_URL; return false;"></a>
+          <a id="howBtn" class="button secondary" href="#how"></a>
+        </div>
+
+        <p class="small" style="margin-top:14px;">
+          Bluetooth • Real-time lutning • Exakt cm-instruktion
+        </p>
+      </div>
+
+      <div class="imgbox">
+        <img src="hero-levelgo.jpg" alt="LevelGo app på telefon">
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <h2 id="howTitle"></h2>
+      <p id="how1"></p>
+      <p id="how2"></p>
+      <p id="how3"></p>
+    </section>
+
+    <section class="section" id="images">
+      <h2 id="imagesTitle">Bilder</h2>
+      <div class="gallery">
+        <img src="levelgo-1.jpg" alt="LevelGo – produktbild 1">
+        <img src="levelgo-2.jpg" alt="LevelGo – produktbild 2">
+        <img src="levelgo-3.jpg" alt="LevelGo – produktbild 3">
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2 id="contactTitle"></h2>
+      <p class="small" id="contactLead"></p>
+      <p><b>Tyllcamp</b></p>
+      <p><span id="emailLabel">E-post</span>: <a id="mail" href="#">info@tyllcamp.fi</a></p>
+      <p><span id="phoneLabel">Telefon</span>: <a id="tel" href="#">+358000000000</a></p>
+      <p class="small">Finland</p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Tyllcamp – <span id="rights"></span>
+  </footer>
+
 </div>
-</header>
 
-<section class="hero">
-<div class="card">
-<h1 id="title"></h1>
-<p class="tagline" id="tagline"></p>
-<a id="download" class="button" href="#" onclick="window.location.href=APP_URL"></a>
-</div>
-<div class="imgbox">
-<img src="hero-levelgo.jpg" alt="LevelGo app">
-</div>
-</section>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
-<section class="section">
-<h2 id="howTitle"></h2>
-<p id="how1"></p>
-<p id="how2"></p>
-<p id="how3"></p>
-</section>
+<!--
+  FILES YOU SHOULD HAVE IN THE SAME FOLDER AS index.html:
 
-<section class="section">
-<h2>Bilder</h2>
-<div class="gallery">
-<img src="levelgo-1.jpg">
-<img src="levelgo-2.jpg">
-<img src="levelgo-3.jpg">
-</div>
-</section>
-
-<section class="section">
-<h2 id="contactTitle"></h2>
-<p>Tyllcamp</p>
-<p><a href="mailto:info@tyllcamp.fi">info@tyllcamp.fi</a></p>
-<p>Finland</p>
-</section>
-
-<footer>
-© 2025 Tyllcamp – <span id="rights"></span>
-</footer>
-
-</div>
-
+  - tyllcamp-logo.png
+  - hero-levelgo.jpg
+  - levelgo-1.jpg
+  - levelgo-2.jpg
+  - levelgo-3.jpg
+  - og-levelgo.jpg         (social share preview 1200x630)
+  - favicon.png            (32x32 or 48x48)
+  - apple-touch-icon.png   (180x180)
+-->
 </body>
 </html>
