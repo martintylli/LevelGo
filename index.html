@@ -6,7 +6,7 @@
 
 <!-- SEO -->
 <title>LevelGo – Perfekt i våg. Inga gräl. | Tyllcamp</title>
-<meta name="description" content="LevelGo från Tyllcamp är ett smart digitalt vattenpass för husbil och husvagn. Du ser direkt hur mycket och var du ska höja – exakt i centimeter via mobilen.">
+<meta name="description" content="LevelGo från Tyllcamp hjälper dig stå perfekt i våg. Se direkt hur mycket och var du ska höja – exakt i centimeter. Så att äggen stannar mitt i pannan och kaffekoppen står still.">
 <meta name="robots" content="index,follow">
 <meta name="author" content="Tyllcamp">
 <link rel="canonical" href="https://tyllcamp.com/">
@@ -14,7 +14,7 @@
 <!-- Open Graph -->
 <meta property="og:site_name" content="Tyllcamp">
 <meta property="og:title" content="LevelGo – Perfekt i våg. Inga gräl.">
-<meta property="og:description" content="Du ser direkt hur mycket och var du ska höja. LevelGo räknar ut exakt hur många centimeter som behövs.">
+<meta property="og:description" content="Du ser direkt hur mycket och var du ska höja – exakt i centimeter. Så att äggen stannar mitt i pannan och kaffekoppen står still.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tyllcamp.com/">
 <meta property="og:image" content="https://tyllcamp.com/og-levelgo.jpg">
@@ -36,9 +36,7 @@
   --radius:18px;
   --max:1100px;
 }
-
 *{box-sizing:border-box}
-
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
@@ -46,9 +44,7 @@ body{
   background:var(--bg);
   line-height:1.5;
 }
-
 .wrap{max-width:var(--max); margin:auto; padding:20px;}
-
 header{
   display:flex;
   justify-content:space-between;
@@ -57,11 +53,8 @@ header{
   gap:16px;
   flex-wrap:wrap;
 }
-
 header img{height:34px;}
-
 .lang{display:flex; gap:6px;}
-
 .lang button{
   border:1px solid var(--line);
   background:transparent;
@@ -72,13 +65,11 @@ header img{height:34px;}
   font-weight:700;
   font-size:12px;
 }
-
 .lang button.active{
   background:var(--brand);
   color:#000;
   border-color:transparent;
 }
-
 .hero{
   display:grid;
   grid-template-columns:1.1fr .9fr;
@@ -86,31 +77,26 @@ header img{height:34px;}
   align-items:center;
   margin-bottom:60px;
 }
-
 @media(max-width:900px){
   .hero{grid-template-columns:1fr;}
 }
-
 .card{
   background:var(--card);
   border-radius:var(--radius);
   padding:28px;
   border:1px solid var(--line);
 }
-
 h1{
   font-size:clamp(30px,4vw,44px);
   margin:0 0 16px;
   letter-spacing:-0.02em;
   line-height:1.1;
 }
-
 .tagline{
   color:var(--muted);
   margin:0 0 20px;
   font-size:17px;
 }
-
 .button{
   display:inline-block;
   padding:14px 24px;
@@ -120,37 +106,28 @@ h1{
   font-weight:800;
   text-decoration:none;
 }
-
 .imgbox img{
   width:100%;
   border-radius:var(--radius);
   border:1px solid var(--line);
   display:block;
 }
-
-.section{
-  margin-top:70px;
-}
-
+.section{margin-top:70px;}
 h2{margin:0 0 14px;}
-
 .gallery{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:16px;
 }
-
 @media(max-width:900px){
   .gallery{grid-template-columns:1fr;}
 }
-
 .gallery img{
   width:100%;
   border-radius:var(--radius);
   border:1px solid var(--line);
   display:block;
 }
-
 footer{
   margin-top:80px;
   padding-top:20px;
@@ -169,7 +146,7 @@ const APP_URL="https://app.tyllcamp.com/";
 const dict={
 sv:{
 title:"Perfekt i våg.<br>Inga gräl.",
-tagline:"Du ser direkt hur mycket och var du ska höja. LevelGo räknar ut exakt hur många centimeter som behövs.",
+tagline:"Du ser direkt hur mycket och var du ska höja. LevelGo räknar ut exakt hur många centimeter som behövs – så att äggen stannar mitt i pannan och kaffekoppen står still.",
 download:"Ladda ner appen",
 howTitle:"Så funkar det",
 how1:"1. Parkera",
@@ -179,7 +156,7 @@ rights:"Alla rättigheter förbehållna."
 },
 fi:{
 title:"Täydellisesti suorassa.<br>Ilman riitoja.",
-tagline:"Näet heti kuinka paljon ja mistä kohtaa pitää nostaa. LevelGo laskee tarkasti senttimetrit puolestasi.",
+tagline:"Näet heti kuinka paljon ja mistä kohtaa pitää nostaa. LevelGo laskee tarkat senttimetrit – niin että munakas ei valu pannun reunalle ja kahvikuppi pysyy paikallaan.",
 download:"Lataa sovellus",
 howTitle:"Näin se toimii",
 how1:"1. Pysäköi",
@@ -189,7 +166,7 @@ rights:"Kaikki oikeudet pidätetään."
 },
 en:{
 title:"Perfectly level.<br>No arguments.",
-tagline:"See instantly how much and where to adjust. LevelGo calculates the exact centimeters for you.",
+tagline:"See instantly how much and where to adjust. LevelGo calculates the exact centimeters – so your eggs stay in the middle of the pan and your coffee cup stays put.",
 download:"Get the app",
 howTitle:"How it works",
 how1:"1. Park",
@@ -200,70 +177,70 @@ rights:"All rights reserved."
 };
 
 function setLang(lang){
-const t=dict[lang];
-document.documentElement.lang=lang;
-document.getElementById("title").innerHTML=t.title;
-document.getElementById("tagline").innerHTML=t.tagline;
-document.getElementById("download").textContent=t.download;
-document.getElementById("howTitle").textContent=t.howTitle;
-document.getElementById("how1").textContent=t.how1;
-document.getElementById("how2").textContent=t.how2;
-document.getElementById("how3").textContent=t.how3;
-document.getElementById("rights").textContent=t.rights;
+  const t=dict[lang];
+  document.documentElement.lang=lang;
+  document.getElementById("title").innerHTML=t.title;
+  document.getElementById("tagline").innerHTML=t.tagline;
+  document.getElementById("download").textContent=t.download;
+  document.getElementById("howTitle").textContent=t.howTitle;
+  document.getElementById("how1").textContent=t.how1;
+  document.getElementById("how2").textContent=t.how2;
+  document.getElementById("how3").textContent=t.how3;
+  document.getElementById("rights").textContent=t.rights;
 
-document.querySelectorAll(".lang button").forEach(b=>{
-b.classList.toggle("active",b.dataset.lang===lang);
-});
+  document.querySelectorAll(".lang button").forEach(b=>{
+    b.classList.toggle("active",b.dataset.lang===lang);
+  });
 
-localStorage.setItem("lang",lang);
+  localStorage.setItem("lang",lang);
 }
 
 window.onload=()=>{
-const saved=localStorage.getItem("lang")||"sv";
-setLang(saved);
+  const saved=localStorage.getItem("lang")||"sv";
+  setLang(saved);
 };
 </script>
 
 <div class="wrap">
 
 <header>
-<img src="tyllcamp-logo.png" alt="Tyllcamp">
-<div class="lang">
-<button data-lang="sv" onclick="setLang('sv')">SV</button>
-<button data-lang="fi" onclick="setLang('fi')">FI</button>
-<button data-lang="en" onclick="setLang('en')">EN</button>
-</div>
+  <img src="tyllcamp-logo.png" alt="Tyllcamp">
+  <div class="lang">
+    <button data-lang="sv" onclick="setLang('sv')">SV</button>
+    <button data-lang="fi" onclick="setLang('fi')">FI</button>
+    <button data-lang="en" onclick="setLang('en')">EN</button>
+  </div>
 </header>
 
 <section class="hero">
-<div class="card">
-<h1 id="title"></h1>
-<p class="tagline" id="tagline"></p>
-<a id="download" class="button" href="#" onclick="window.location.href=APP_URL"></a>
-</div>
-<div class="imgbox">
-<img src="hero-levelgo.jpg" alt="LevelGo app">
-</div>
+  <div class="card">
+    <h1 id="title"></h1>
+    <p class="tagline" id="tagline"></p>
+    <a id="download" class="button" href="#" onclick="window.location.href=APP_URL"></a>
+  </div>
+  <div class="imgbox">
+    <img src="hero-levelgo.jpg" alt="LevelGo app">
+  </div>
 </section>
 
 <section class="section">
-<h2 id="howTitle"></h2>
-<p id="how1"></p>
-<p id="how2"></p>
-<p id="how3"></p>
+  <h2 id="howTitle"></h2>
+  <p id="how1"></p>
+  <p id="how2"></p>
+  <p id="how3"></p>
 </section>
 
 <section class="section">
-<h2>Bilder</h2>
-<div class="gallery">
-<img src="levelgo-1.jpg" alt="Campingbild 1">
-<img src="levelgo-2.jpg" alt="Campingbild 2">
-<img src="levelgo-3.jpg" alt="Campingbild 3">
-</div>
+  <h2>Bilder</h2>
+  <div class="gallery">
+    <img src="levelgo-1.jpg" alt="Campingbild 1">
+    <img src="levelgo-2.jpg" alt="Campingbild 2">
+    <img src="levelgo-3.jpg" alt="Campingbild 3">
+  </div>
 </section>
 
 <footer>
-© <span id="year"></span> Tyllcamp – <span id="rights"></span>
+  © <span id="year"></span> Tyllcamp – <span id="rights"></span>
 </footer>
 
 </div>
